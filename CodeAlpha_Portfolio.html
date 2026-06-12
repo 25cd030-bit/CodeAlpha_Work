@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    line-height:1.6;
+}
+
+/* Navigation */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#222;
+    padding:15px 0;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:orange;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin:10px 0;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:white;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:black;
+    color:white;
+}
+
+/* Sections */
+section{
+    padding:80px 10%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* About */
+.about{
+    text-align:center;
+}
+
+/* Skills */
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:#222;
+    color:white;
+    padding:12px 20px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:scale(1.1);
+}
+
+/* Projects */
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project{
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+<h1>KANNAN R</h1>
+<p>Frontend Developer | Student</p>
+<a href="#projects" class="btn">View Projects</a>
+</section>
+
+<!-- About -->
+<section id="about" class="about fade">
+<h2>About Me</h2>
+<p>
+I am a passionate Frontend Developer and Computer Science student.
+I enjoy creating responsive websites using HTML, CSS and JavaScript.
+Currently learning modern web development technologies and building projects.
+</p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="fade">
+<h2>Skills</h2>
+
+<div class="skills-container">
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Python</div>
+<div class="skill">Java</div>
+<div class="skill">GitHub</div>
+</div>
+
+</section>
+
+<!-- Projects -->
+<section id="projects" class="fade">
+
+<h2>Projects</h2>
+
+<div class="projects-container">
+
+<div class="project">
+<h3>Calculator App</h3>
+<p>
+Built using HTML, CSS and JavaScript with arithmetic operations and keyboard support.
+</p>
+</div>
+
+<div class="project">
+<h3>Music Player</h3>
+<p>
+Interactive music player with playlist, progress bar and volume controls.
+</p>
+</div>
+
+<div class="project">
+<h3>Image Gallery</h3>
+<p>
+Responsive gallery with lightbox view and image navigation features.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Resume -->
+<section class="fade">
+<h2>Resume</h2>
+<p style="text-align:center;">
+<a href="resume.pdf" class="btn">Download Resume</a>
+</p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact fade">
+
+<h2>Contact Me</h2>
+
+<p>Email: yourmail@example.com</p>
+<p>Phone: +91 XXXXX XXXXX</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
+<p>GitHub: github.com/yourusername</p>
+
+</section>
+
+<footer>
+<p>© 2026 Sai Sanjay. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+
+    fades.forEach(section=>{
+
+        const sectionTop =
+        section.getBoundingClientRect().top;
+
+        if(sectionTop < window.innerHeight - 100){
+            section.classList.add('show');
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+
+
